@@ -9,10 +9,10 @@
 <?php if ($randomInt > 5) { ?>
 <h2>Nice!</h2>
 <?php } ?>
-<p>
-    <a href="/pictures.php?number=<?php echo $randomInt; ?>">
-        Now show me <?php echo $randomInt; ?> kittens!
-    </a>
-</p>
+<form method="POST" action="/pictures.php" >
+    <input type="hidden" name="number" value="<?php
+      echo $randomInt; ?>">
+      <button type="submit">Now show me <?php echo $randomInt; ?> kittens!</button>
+</form>
 </body>
 </html>
