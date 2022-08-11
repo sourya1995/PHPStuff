@@ -10,8 +10,8 @@
 <h2>Nice!</h2>
 <?php } ?>
 <p>
-    <a href="/doggos.php?number=<?php echo $randomInt; ?>">
-        Now show me <?php echo $randomInt; ?> doggos!
+    <a href="/pictures.php?number=<?php echo $randomInt; ?>">
+        Now show me <?php echo $randomInt; ?> kittens!
     </a>
 </p>
 </body>
