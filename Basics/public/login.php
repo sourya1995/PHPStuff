@@ -12,15 +12,10 @@ if(isset($_POST['username'], $_POST['password'])){
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
+<?php 
+$title = 'Login';
+include(__DIR__.'/../_header.php');
+?>
     
     <form method="POST">
         <div>
@@ -35,5 +30,4 @@ if(isset($_POST['username'], $_POST['password'])){
             <button type="submit">Submit</button>
         </div>
     </form>
-</body>
-</html>
+<?php include(__DIR__.'/../_footer.php');
