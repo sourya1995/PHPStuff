@@ -23,13 +23,14 @@ $formErrors = [];
  */
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $normalizedData = array_merge($originalData, normalize_submitted_data($_POST));
+    $normalizedData = array_merge($originalData, normalize_submitted_data($_POST, $_FILES));
 
     $formErrors = validate_normalized_data($normalizedData);
 
     if (count($formErrors) === 0) {
         // TODO save the modified tour data
-        $normalizedData['id'] = $tourId;
+        
+        $normalizedData = process_image_upload($normalizedData);
         save_tour_data($normalizedData);
         $_SESSION['message'] = 'The tour was updated successfully';
         header('Location: /list-tours');

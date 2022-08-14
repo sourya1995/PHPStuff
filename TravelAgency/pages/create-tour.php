@@ -7,8 +7,10 @@ $formErrors = [];
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    var_dump($_FILES);
+    exit;
     // Step 1: normalize the request data:
-    $normalizedData = normalize_submitted_data($_POST);
+    $normalizedData = normalize_submitted_data($_POST, $_FILES);
     // Step 2: validate the normalized data
     $formErrors = validate_normalized_data($normalizedData);
   
@@ -17,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (count($formErrors) === 0) {
         $toursData = load_all_tours_data();
         $normalizedData['id'] = count($toursData) + 1;
+        $normalizedData = process_image_upload($normalizedData);
         $toursData[] = $normalizedData;
         save_all_tours($toursData);
         $_SESSION['message'] = 'The new tour was saved successfully';

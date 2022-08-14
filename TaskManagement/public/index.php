@@ -4,7 +4,8 @@ $urlMap = [
     '/login' => 'login.php',
     '/logout' => 'logout.php',
     '/list-tasks' => 'list-tasks.php',
-    '/create-task' => 'create-task.php'
+    '/create-task' => 'create-task.php',
+    '/tour' => 'tour.php'
 ];
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/login';
