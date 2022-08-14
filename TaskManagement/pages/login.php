@@ -11,7 +11,7 @@ if(isset($_POST['username'], $_POST['password'])) {
         $expectedPasswordHash = $users[$_POST['username']];
         if(password_verify($_POST['password'], $expectedPasswordHash)){
             $_SESSION['authenticated_user'] = $_POST['username'];
-            header('Location: /tasks');
+            header('Location: /list-tasks');
             exit;
         }
     }

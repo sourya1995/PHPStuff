@@ -15,9 +15,13 @@ $title = $title ?? 'PHP for the Web';
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-light">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/tasks">Tasks</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/list-tasks">Tasks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/create-task">Create task</a>
+            </li>
+                
                 <?php
                 if(isset($_SESSION['authenticated_user'])) {
                     ?>
